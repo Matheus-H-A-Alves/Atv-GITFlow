@@ -1,8 +1,8 @@
 name: CI/CD Pipeline
 on:
-  push:
+  pull_request:
     branches:
-      -main
+      - main
 jobs:
   continuous-integration:
     runs-on: ubuntu-latest
