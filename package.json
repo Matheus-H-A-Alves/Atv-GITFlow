@@ -1,0 +1,11 @@
+{
+  "name": "ci-cd-pipeline",
+  "version": "1.0.0",
+  "description": "Workflow de CI/CD para testes automáticos",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Build executado com sucesso!'",
+    "test": "echo 'Testes executados com sucesso!'"
+  },
+  "license": "MIT"
+}

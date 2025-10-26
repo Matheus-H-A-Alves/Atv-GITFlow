@@ -23,6 +23,18 @@ jobs:
           npm install
           npm run build   
           npm test
+deploy:
+    needs: continuous-integration
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy Application
+        run: |
+          echo "Deploying application..."
+          # Add your deployment commands here
 
   
 
