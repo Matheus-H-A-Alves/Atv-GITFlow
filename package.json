@@ -1,11 +1,21 @@
 {
-  "name": "ci-cd-pipeline",
+  "name": "atv-gitflow",
   "version": "1.0.0",
-  "description": "Workflow de CI/CD para testes automáticos",
+  "description": "Atividade para realizar um GitFlow utilizando o GitHub Actions",
   "main": "index.js",
   "scripts": {
-    "build": "echo 'Build executado com sucesso!'",
-    "test": "echo 'Testes executados com sucesso!'"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matheus-H-A-Alves/Atv-GITFlow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Matheus-H-A-Alves/Atv-GITFlow/issues"
+  },
+  "homepage": "https://github.com/Matheus-H-A-Alves/Atv-GITFlow#readme"
 }
