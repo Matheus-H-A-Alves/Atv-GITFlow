@@ -4,7 +4,9 @@
   "description": "Atividade para realizar um GitFlow utilizando o GitHub Actions",
   "main": "index.js",
   "scripts": {
+    "build": "echo 'Build executado com sucesso!'",
     "test": "echo \"Error: no test specified\" && exit 1"
+
   },
   "repository": {
     "type": "git",
