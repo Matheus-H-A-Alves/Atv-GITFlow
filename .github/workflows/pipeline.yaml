@@ -28,16 +28,16 @@ jobs:
         npm run build   
         npm test
       working-directory: ./Atv-GITFlow
-deploy:
-  needs: continuous-integration
-  runs-on: ubuntu-latest
-  if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-  steps:
-  - name: Checkout repository
-    uses: actions/checkout@v3
+  deploy:
+    needs: continuous-integration
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-  - name: Deploy Application
-    run: |
-      echo "Deploying application..."
-      # Add your deployment commands here
-    working-directory: ./Atv-GITFlow
+    - name: Deploy Application
+      run: |
+        echo "Deploying application..."
+        # Add your deployment commands here
+      working-directory: ./Atv-GITFlow
