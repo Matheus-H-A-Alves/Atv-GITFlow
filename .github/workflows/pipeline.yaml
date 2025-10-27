@@ -16,10 +16,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '22.x'  
+          node-version: '22.x'
+
+      - name: List files for debug
+        run: ls -R
 
       - name: Install, build and test
         run: |
+          
           npm install
           npm run build   
           npm test
