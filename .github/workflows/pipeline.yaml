@@ -2,44 +2,42 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+    - main
   pull_request:
     branches:
-      - main
+    - main
 jobs:
   continuous-integration:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '22.x'
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '22.x'
 
-      - name: List files for debug
-        run: ls -R
+    - name: List files for debug
+      run: ls -R
 
-      - name: Install, build and test
-        run: |
-          
-          npm install
-          npm run build   
-          npm test
+    - name: Install, build and test
+      run: |
+        
+        npm install
+        npm run build   
+        npm test
+      working-directory: ./Atv-GITFlow
 deploy:
-    needs: continuous-integration
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+  needs: continuous-integration
+  runs-on: ubuntu-latest
+  if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+  steps:
+  - name: Checkout repository
+    uses: actions/checkout@v3
 
-      - name: Deploy Application
-        run: |
-          echo "Deploying application..."
-          # Add your deployment commands here
-
-  
-
-
+  - name: Deploy Application
+    run: |
+      echo "Deploying application..."
+      # Add your deployment commands here
+    working-directory: ./Atv-GITFlow
