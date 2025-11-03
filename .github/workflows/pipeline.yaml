@@ -25,8 +25,31 @@ jobs:
         npm install
         npm run build   
         npm test
-  deploy:
+
+  sast:
     needs: continuous-integration
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Run SAST Analysis
+      run: |
+        echo "Running Static Application Security Testing (SAST)..."
+        # Add your SAST commands here
+
+  dast:
+    needs: sast
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Run DAST Analysis
+      run: |
+        echo "Running Dynamic Application Security Testing (DAST)..."
+        # Add your DAST commands here
+
+  deploy:
+    needs: dast
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
