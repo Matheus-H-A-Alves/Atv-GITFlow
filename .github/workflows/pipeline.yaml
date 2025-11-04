@@ -35,7 +35,7 @@ jobs:
     - name: Run SAST Analysis
       run: |
         echo "Running Static Application Security Testing (SAST)..."
-        # Add your SAST commands here
+        
 
   dast:
     needs: sast
@@ -46,7 +46,7 @@ jobs:
     - name: Run DAST Analysis
       run: |
         echo "Running Dynamic Application Security Testing (DAST)..."
-        # Add your DAST commands here
+        
 
   deploy:
     needs: dast
@@ -58,4 +58,4 @@ jobs:
     - name: Deploy Application
       run: |
         echo "Deploying application..."
-        # Add your deployment commands here
+       
