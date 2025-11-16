@@ -38,7 +38,7 @@ jobs:
         
 
   dast-Dynamic-Application:
-    needs: sast-Static-Analysis
+    needs: sast-Static-Application
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
