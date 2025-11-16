@@ -26,7 +26,7 @@ jobs:
         npm run build   
         npm test
 
-  sast-Static-Analysis:
+  sast-Static-Application:
     needs: continuous-integration
     runs-on: ubuntu-latest
     steps:
